@@ -23,4 +23,13 @@
 
     <color name="red">#E32626</color>
 
+    <color name="redKakapos">#F41C1C</color>
+    <color name="blueKakapos">#414FB7</color>
+    <color name="yellowKakapos">#F4A31C</color>
+    <color name="blackKakapos">#45494A</color>
+    <color name="greyKakapos">#BFBFBF</color>
+    <color name="youngGreyKakapos">#F7F9F4</color>
+    <color name="whiteKakapos">#FFFFFF</color>
+    <color name="textInput">#F2F2F2</color>
+
 </resources>
