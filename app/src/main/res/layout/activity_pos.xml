@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:weightSum="14">
             <ImageView
-                android:id="@+id/imageMenu"
+                android:id="@+id/img_back"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_marginStart="15dp"
@@ -40,16 +40,37 @@
                 android:textColor="@color/blackKakapos"
                 android:textSize="16sp"
                 android:layout_weight="12"/>
-            <ImageView
-                android:id="@+id/menu_cart_button"
-                android:layout_width="21dp"
-                android:layout_height="28dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="13dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginEnd="5dp"
-                android:background="@drawable/ic_shopping_cart"
-                android:layout_weight="1"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center|right"
+                android:layout_marginTop="2dp"
+                android:layout_weight="1"
+                android:gravity="center">
+
+
+                <ImageView
+                    android:id="@+id/img_cart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:foregroundGravity="center"
+                    android:padding="15dp"
+                    android:src="@drawable/ic_shopping_cart" />
+
+
+                <TextView
+                    android:id="@+id/txt_count"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/circle"
+                    android:gravity="center"
+                    android:text="10"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textSize="10sp" />
+            </RelativeLayout>
         </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -131,6 +152,68 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:fontFamily="@font/sailec_regular"
+                    android:padding="5dp"
+                    android:text="@string/product_category"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <com.balysv.materialripple.MaterialRippleLayout
+                    style="@style/RippleStyleWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/txt_reset"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:fontFamily="@font/sailec_regular"
+                        android:gravity="right"
+                        android:paddingTop="5dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="5dp"
+                        android:text="@string/reset"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+                </com.balysv.materialripple.MaterialRippleLayout>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/colorPrimary"
+                android:fontFamily="@font/sailec_regular"
+                android:padding="5dp"
+                android:text="@string/all_product"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 
 
             <androidx.recyclerview.widget.RecyclerView
