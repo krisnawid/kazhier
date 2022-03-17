@@ -169,7 +169,7 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.MyViewHo
     //delete from server
     private void deleteExpense(String expenseId) {
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.context.getApplicationContext()).create(ApiInterface.class);
 
         Call<Expense> call = apiInterface.deleteExpense(expenseId);
         call.enqueue(new Callback<Expense>() {

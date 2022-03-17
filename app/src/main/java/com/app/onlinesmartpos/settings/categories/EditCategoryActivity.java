@@ -95,7 +95,7 @@ public class EditCategoryActivity extends BaseActivity {
         loading.setMessage(getString(R.string.please_wait));
         loading.show();
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
 
         Call<Category> call = apiInterface.updateCategory(categoryId, categoryName);
         call.enqueue(new Callback<Category>() {

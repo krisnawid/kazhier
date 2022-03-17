@@ -155,7 +155,7 @@ public class ExpenseReportActivity extends BaseActivity {
 
     public void getExpenseData(String type) {
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
         Call<List<Expense>> call;
         call = apiInterface.getAllExpense(type);
 
@@ -211,7 +211,7 @@ public class ExpenseReportActivity extends BaseActivity {
 
     public void getExpenseReport(String type) {
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
         Call<List<ExpenseReport>> call;
         call = apiInterface.getExpenseReport(type);
 

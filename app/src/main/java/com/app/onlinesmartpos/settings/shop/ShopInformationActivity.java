@@ -66,7 +66,7 @@ public class ShopInformationActivity extends BaseActivity {
         loading.setMessage(getString(R.string.please_wait));
         loading.setCancelable(false);
         loading.show();
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
         Call<List<ShopInformation>> call;
         call = apiInterface.shopInformation(shopId);
 

@@ -151,7 +151,7 @@ public class OrdersActivity extends BaseActivity {
 
     public void getOrdersData(String searchText) {
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
         Call<List<OrderList>> call;
         call = apiInterface.getOrders(searchText);
 

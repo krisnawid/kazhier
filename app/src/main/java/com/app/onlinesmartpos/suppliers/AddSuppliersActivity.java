@@ -111,7 +111,7 @@ public class AddSuppliersActivity extends BaseActivity {
         loading.setCancelable(false);
         loading.setMessage(getString(R.string.please_wait));
         loading.show();
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
 
         Call<Suppliers> call = apiInterface.addSuppliers(name,contactPerson,cell,email,address);
         call.enqueue(new Callback<Suppliers>() {

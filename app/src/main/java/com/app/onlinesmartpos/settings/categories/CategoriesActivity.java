@@ -79,7 +79,7 @@ public class CategoriesActivity extends BaseActivity {
 
     public void getProductCategory() {
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
 
         Call<List<Category>> call;
 

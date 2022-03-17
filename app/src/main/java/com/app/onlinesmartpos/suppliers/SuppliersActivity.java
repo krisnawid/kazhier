@@ -173,7 +173,7 @@ public class SuppliersActivity extends BaseActivity {
 
     public void getSuppliersData(String searchText) {
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
         Call<List<Suppliers>> call;
         call = apiInterface.getSuppliers(searchText);
 

@@ -517,7 +517,7 @@ public class EditProductActivity extends BaseActivity {
         loading.setCancelable(false);
         loading.setMessage(getString(R.string.please_wait));
         loading.show();
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
         Call<List<Product>> call;
         call = apiInterface.getProductById(productId);
 
@@ -617,7 +617,7 @@ public class EditProductActivity extends BaseActivity {
 
     public void getProductCategory() {
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
 
         Call<List<Category>> call;
 
@@ -659,7 +659,7 @@ public class EditProductActivity extends BaseActivity {
 
     public void getProductSuppliers() {
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
 
         Call<List<Suppliers>> call;
 
@@ -700,7 +700,7 @@ public class EditProductActivity extends BaseActivity {
 
     public void getWeightUnits() {
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
 
         Call<List<WeightUnit>> call;
 
@@ -784,7 +784,7 @@ public class EditProductActivity extends BaseActivity {
 
 
 
-        ApiInterface getResponse = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface getResponse = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
         Call<Product> call;
         if (mediaPath.equals("na"))
         {

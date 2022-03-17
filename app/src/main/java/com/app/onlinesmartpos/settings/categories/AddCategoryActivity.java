@@ -72,7 +72,7 @@ public class AddCategoryActivity extends BaseActivity {
         loading.setCancelable(false);
         loading.setMessage(getString(R.string.please_wait));
         loading.show();
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
 
         Call<Category> call = apiInterface.addCategory(categoryName);
         call.enqueue(new Callback<Category>() {

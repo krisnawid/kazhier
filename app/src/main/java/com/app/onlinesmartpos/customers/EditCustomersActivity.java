@@ -138,7 +138,7 @@ public class EditCustomersActivity extends BaseActivity {
         loading.setMessage(getString(R.string.please_wait));
         loading.show();
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
 
         Call<Customer> call = apiInterface.updateCustomers(id,name,cell,email,address);
         call.enqueue(new Callback<Customer>() {

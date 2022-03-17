@@ -8,7 +8,7 @@ public class Constant {
     }
 
     //For retrofit base url must end with /
-    public static final String BASE_URL = "https://demo.onlinesoftsell.com/smartpos/api/";
+    public static final String BASE_URL = "https://kazhier.com/api/";
 
     //For retrofit base url must end with /
     public static final String PRODUCT_IMAGE_URL = "https://demo.onlinesoftsell.com/smartpos/product_images/";
@@ -45,6 +45,8 @@ public class Constant {
     public static final String SP_SHOP_STATUS="shop_status";
     public static final String SP_CURRENCY_SYMBOL="currency_symbol";
     public static final String SP_TAX="tax";
+
+    public static final String TOKEN="token";
 
 
     public static final String INVOICE_ID="invoice_id";

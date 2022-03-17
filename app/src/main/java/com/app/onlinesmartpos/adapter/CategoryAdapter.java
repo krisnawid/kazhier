@@ -143,7 +143,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
     //delete from server
     private void deleteCategory(String categoryId) {
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.context.getApplicationContext()).create(ApiInterface.class);
 
         Call<Category> call = apiInterface.deleteCategory(categoryId);
         call.enqueue(new Callback<Category>() {

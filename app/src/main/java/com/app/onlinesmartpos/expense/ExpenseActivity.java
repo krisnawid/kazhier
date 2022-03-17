@@ -156,7 +156,7 @@ public class ExpenseActivity extends BaseActivity {
 
     public void getExpenseData(String searchText) {
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
         Call<List<Expense>> call;
         call = apiInterface.getExpense(searchText);
 

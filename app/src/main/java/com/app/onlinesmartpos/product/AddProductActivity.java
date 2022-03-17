@@ -491,7 +491,7 @@ public class AddProductActivity extends BaseActivity {
             RequestBody stock = RequestBody.create(MediaType.parse("text/plain"), productStock);
 
 
-            ApiInterface getResponse = ApiClient.getApiClient().create(ApiInterface.class);
+            ApiInterface getResponse = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
             Call<Product> call = getResponse.addProduct(fileToUpload, filename, name, code, category, description, buyPrice,sellPrice, weight, weightUnitId, supplierId, stock);
             call.enqueue(new Callback<Product>() {
                 @Override
@@ -543,7 +543,7 @@ public class AddProductActivity extends BaseActivity {
 
     public void getProductCategory() {
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
 
         Call<List<Category>> call;
 
@@ -585,7 +585,7 @@ public class AddProductActivity extends BaseActivity {
 
     public void getProductSuppliers() {
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
 
         Call<List<Suppliers>> call;
 
@@ -626,7 +626,7 @@ public class AddProductActivity extends BaseActivity {
 
     public void getWeightUnits() {
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
 
         Call<List<WeightUnit>> call;
 

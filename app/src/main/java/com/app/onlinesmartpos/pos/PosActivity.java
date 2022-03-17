@@ -221,7 +221,7 @@ public class PosActivity extends BaseActivity {
 
     public void getProductCategory() {
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
 
         Call<List<Category>> call;
 
@@ -271,7 +271,7 @@ public class PosActivity extends BaseActivity {
 
     public void getProductsData(String searchText) {
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
         Call<List<Product>> call;
         call = apiInterface.getProducts(searchText);
 

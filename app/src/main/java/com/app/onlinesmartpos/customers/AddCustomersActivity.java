@@ -111,7 +111,7 @@ public class AddCustomersActivity extends BaseActivity {
         loading.setCancelable(false);
         loading.setMessage(getString(R.string.please_wait));
         loading.show();
-       ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+       ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
 
         Call<Customer> call = apiInterface.addCustomers(name,cell,email,address);
         call.enqueue(new Callback<Customer>() {

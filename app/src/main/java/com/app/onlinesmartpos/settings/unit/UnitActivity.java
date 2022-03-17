@@ -149,7 +149,7 @@ public class UnitActivity extends BaseActivity {
 
     public void getWeightUnit(String searchText) {
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
         Call<List<WeightUnit>> call;
         call = apiInterface.getWeightUnits(searchText);
 

@@ -22,12 +22,16 @@ import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Headers;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Part;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface ApiInterface {
@@ -35,29 +39,31 @@ public interface ApiInterface {
 
     //for login
     @FormUrlEncoded
-    @POST("login.php")
+    @POST("login")
     Call<Login> login(
             @Field(Constant.KEY_EMAIL) String email,
             @Field(Constant.KEY_PASSWORD) String password);
 
 
     //calling json array , need list
-    @POST("orders_submit.php")
+    @POST("order/create")
     Call<String> submitOrders(
             @Body RequestBody ordersData
     );
 
 
     //get customers data
-    @GET("get_customer.php")
+//    @Headers({"Accept: application/json",
+//            "Authorization: Bearer {token}"
+//    })
+    @GET("customer")
     Call<List<Customer>> getCustomers(
             @Query(Constant.SEARCH_TEXT) String searchText
-
     );
 
 
     //get customers data
-    @GET("get_orders.php")
+    @GET("order")
     Call<List<OrderList>> getOrders(
             @Query(Constant.SEARCH_TEXT) String searchText
 
@@ -65,7 +71,7 @@ public interface ApiInterface {
 
 
     //get customers data
-    @GET("get_products.php")
+    @GET("product-service/all")
     Call<List<Product>> getProducts(
             @Query(Constant.SEARCH_TEXT) String searchText
 
@@ -73,9 +79,9 @@ public interface ApiInterface {
 
 
     //get product data
-    @GET("get_product_by_id.php")
+    @GET("product-service/{product_id}")
     Call<List<Product>> getProductById(
-            @Query(Constant.PRODUCT_ID) String productId
+            @Path(value = Constant.PRODUCT_ID) String productId
 
     );
 
@@ -113,7 +119,7 @@ public interface ApiInterface {
 
 
     //get expense data
-    @GET("get_expense_report.php")
+    @GET("expense")
     Call<List<ExpenseReport>> getExpenseReport(
 
             @Query(Constant.KEY_TYPE) String type
@@ -135,7 +141,7 @@ public interface ApiInterface {
 
 
     //for category data
-    @GET("get_category.php")
+    @GET("category/product")
     Call<List<Category>> getCategory();
 
 
@@ -148,7 +154,7 @@ public interface ApiInterface {
 
     //add customer data to server
     @FormUrlEncoded
-    @POST("add_customer.php")
+    @POST("customer/create")
     Call<Customer> addCustomers(
             @Field(Constant.CUSTOMER_NAME) String name,
             @Field(Constant.CUSTOMER_CELL) String cell,
@@ -158,7 +164,7 @@ public interface ApiInterface {
 
     //add unit data to server
     @FormUrlEncoded
-    @POST("add_unit.php")
+    @POST("unit/create")
     Call<WeightUnit> addUnit(
             @Field(Constant.UNIT_NAME) String address
     );
@@ -198,7 +204,7 @@ public interface ApiInterface {
 
     //add suppliers data to server
     @FormUrlEncoded
-    @POST("add_suppliers.php")
+    @POST("supplier/create")
     Call<Suppliers> addSuppliers(
             @Field(Constant.SUPPLIERS_NAME) String name,
             @Field(Constant.SUPPLIERS_CONTACT_PERSON) String contactPerson,
@@ -209,9 +215,10 @@ public interface ApiInterface {
 
     //add suppliers data to server
     @FormUrlEncoded
-    @POST("update_suppliers.php")
+    @PUT("supplier/{supplier_id}/edit")
     Call<Suppliers> updateSuppliers(
-            @Field(Constant.SUPPLIERS_ID) String suppliersId,
+            //@Field(Constant.SUPPLIERS_ID) String suppliersId,
+            @Path(value = Constant.SUPPLIERS_ID) String suppliersId,
             @Field(Constant.SUPPLIERS_NAME) String name,
             @Field(Constant.SUPPLIERS_CONTACT_PERSON) String contactPerson,
             @Field(Constant.SUPPLIERS_CELL) String cell,
@@ -221,9 +228,10 @@ public interface ApiInterface {
 
     //update customer data to server
     @FormUrlEncoded
-    @POST("update_customer.php")
+    @PUT("customer/{customer_id}/edit")
     Call<Customer> updateCustomers(
-            @Field(Constant.CUSTOMER_ID) String id,
+            //@Field(Constant.CUSTOMER_ID) String id,
+            @Path(value = Constant.CUSTOMER_ID) String id,
             @Field(Constant.CUSTOMER_NAME) String name,
             @Field(Constant.CUSTOMER_CELL) String cell,
             @Field(Constant.CUSTOMER_EMAIL) String email,
@@ -232,9 +240,10 @@ public interface ApiInterface {
 
     //update unit data to server
     @FormUrlEncoded
-    @POST("update_unit.php")
+    @PUT("unit/{unit_id}/edit")
     Call<WeightUnit> updateUnit(
-            @Field(Constant.UNIT_ID) String unitId,
+            //@Field(Constant.UNIT_ID) String unitId,
+            @Path(value = Constant.UNIT_ID) String unitId,
             @Field(Constant.UNIT_NAME) String unitName);
 
 
@@ -248,24 +257,26 @@ public interface ApiInterface {
 
 
     //delete customer
-    @FormUrlEncoded
-    @POST("delete_customer.php")
+//    @FormUrlEncoded
+    @DELETE("customer/{customer_id}/delete")
     Call<Customer> deleteCustomer(
-            @Field(Constant.CUSTOMER_ID) String customerId
+            //@Field(Constant.CUSTOMER_ID) String customerId
+            @Path(Constant.CUSTOMER_ID) String customerId
     );
 
 
     //delete unit
     @FormUrlEncoded
-    @POST("delete_unit.php")
+    @DELETE("unit/{unit_id}/delete")
     Call<WeightUnit> deleteUnit(
-            @Field(Constant.UNIT_ID) String unitId
+            //@Field(Constant.UNIT_ID) String unitId
+            @Path(value = Constant.UNIT_ID) String unitId
     );
 
 
     //delete category
     @FormUrlEncoded
-    @POST("delete_category.php")
+    @DELETE("delete_category.php")
     Call<Category> deleteCategory(
             @Field(Constant.CATEGORY_ID) String categoryId
     );
@@ -273,38 +284,42 @@ public interface ApiInterface {
 
     //delete customer
     @FormUrlEncoded
-    @POST("delete_order.php")
+    @DELETE("order/{id}/delete")
     Call<OrderList> deleteOrder(
-            @Field(Constant.INVOICE_ID) String invoiceId
+            //@Field(Constant.INVOICE_ID) String invoiceId
+            @Path(value = Constant.INVOICE_ID) String invoiceId
     );
 
 
     //delete product
     @FormUrlEncoded
-    @POST("delete_product.php")
+    @DELETE("product-service/{product_id}/delete")
     Call<Product> deleteProduct(
-            @Field(Constant.PRODUCT_ID) String productId
+            //@Field(Constant.PRODUCT_ID) String productId
+            @Path(value = Constant.PRODUCT_ID) String productId
     );
 
 
     //delete customer
     @FormUrlEncoded
-    @POST("delete_expense.php")
+    @DELETE("expense/{expense_id}/delete")
     Call<Expense> deleteExpense(
-            @Field(Constant.EXPENSE_ID) String expenseId
+            //@Field(Constant.EXPENSE_ID) String expenseId
+            @Path(value = Constant.EXPENSE_ID) String expenseId
     );
 
 
     //delete supplier
     @FormUrlEncoded
-    @POST("delete_supplier.php")
+    @DELETE("supplier/{supplier_id}/delete")
     Call<Suppliers> deleteSupplier(
-            @Field(Constant.SUPPLIERS_ID) String suppliersId
+            //@Field(Constant.SUPPLIERS_ID) String suppliersId
+            @Path(value = Constant.SUPPLIERS_ID) String suppliersId
     );
 
 
     //get suppliers data
-    @GET("get_suppliers.php")
+    @GET("supplier/all")
     Call<List<Suppliers>> getSuppliers(
             @Query(Constant.SEARCH_TEXT) String searchText
 
@@ -321,7 +336,7 @@ public interface ApiInterface {
 
     //for upload image and info
     @Multipart
-    @POST("add_product.php")
+    @POST("product-service/create")
     Call<Product> addProduct(@Part MultipartBody.Part file,
                              @Part(Constant.KEY_FILE) RequestBody name,
                              @Part(Constant.PRODUCT_NAME) RequestBody productName,
@@ -339,7 +354,7 @@ public interface ApiInterface {
 
     //for upload image and info
     @Multipart
-    @POST("update_product.php")
+    @PUT("product-service/{product_id}/edit")
     Call<Product> updateProduct(@Part MultipartBody.Part file,
                                 @Part(Constant.KEY_FILE) RequestBody name,
                                 @Part(Constant.PRODUCT_NAME) RequestBody productName,
@@ -382,7 +397,7 @@ public interface ApiInterface {
 
 
     //get expense data
-    @GET("get_all_expense.php")
+    @GET("expense")
     Call<List<Expense>> getAllExpense(
             @Query(Constant.KEY_TYPE) String type
 

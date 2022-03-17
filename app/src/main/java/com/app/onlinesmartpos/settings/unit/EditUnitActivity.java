@@ -103,7 +103,7 @@ public class EditUnitActivity extends BaseActivity {
         loading.setMessage(getString(R.string.please_wait));
         loading.show();
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
 
         Call<WeightUnit> call = apiInterface.updateUnit(unitId,unitName);
         call.enqueue(new Callback<WeightUnit>() {

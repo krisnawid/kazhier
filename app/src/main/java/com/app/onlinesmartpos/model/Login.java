@@ -21,6 +21,9 @@ public class Login {
     @SerializedName("user_type")
     private String userType;
 
+    @SerializedName("token")
+    private String token;
+
 
 
     @SerializedName("password")
@@ -126,6 +129,10 @@ public class Login {
 
     public String getTax() {
         return tax;
+    }
+
+    public String getUserToken() {
+        return token;
     }
 
 

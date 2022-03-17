@@ -167,7 +167,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.MyView
     //delete from server
     private void deleteCustomer(String customerId) {
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.context.getApplicationContext()).create(ApiInterface.class);
 
         Call<Customer> call = apiInterface.deleteCustomer(customerId);
         call.enqueue(new Callback<Customer>() {

@@ -184,7 +184,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
     //delete from server
     private void deleteOrder(String invoiceId) {
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.context.getApplicationContext()).create(ApiInterface.class);
 
         Call<OrderList> call = apiInterface.deleteOrder(invoiceId);
         call.enqueue(new Callback<OrderList>() {

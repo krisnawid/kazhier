@@ -163,7 +163,7 @@ public class SupplierAdapter extends RecyclerView.Adapter<SupplierAdapter.MyView
     //delete from server
     private void deleteSupplier(String supplierId) {
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.context.getApplicationContext()).create(ApiInterface.class);
 
         Call<Suppliers> call = apiInterface.deleteSupplier(supplierId);
         call.enqueue(new Callback<Suppliers>() {

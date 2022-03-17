@@ -145,7 +145,7 @@ public class ExpenseGraphActivity extends BaseActivity {
 
     public void getMonthlyExpense(String year) {
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
         Call<List<MonthData>> call;
         call = apiInterface.getMonthlyExpense(year);
 

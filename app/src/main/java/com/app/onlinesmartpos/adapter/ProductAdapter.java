@@ -179,7 +179,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
     //delete from server
     private void deleteProduct(String productId) {
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.context.getApplicationContext()).create(ApiInterface.class);
 
         Call<Product> call = apiInterface.deleteProduct(productId);
         call.enqueue(new Callback<Product>() {

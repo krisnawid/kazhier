@@ -165,7 +165,7 @@ public class SalesReportActivity extends BaseActivity {
 
     public void getSalesReport(String type) {
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
         Call<List<SalesReport>> call;
         call = apiInterface.getSalesReport(type);
 
@@ -239,7 +239,7 @@ public class SalesReportActivity extends BaseActivity {
     public void getReportList(String type) {
 
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
         Call<List<OrderDetails>> call;
         call = apiInterface.getReportList(type);
 

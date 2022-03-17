@@ -98,7 +98,7 @@ public class LoginActivity extends BaseActivity {
         loading.setMessage(getString(R.string.please_wait));
         loading.show();
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.getApplicationContext()).create(ApiInterface.class);
 
         Call<Login> call = apiInterface.login(email, password);
         call.enqueue(new Callback<Login>() {
@@ -111,6 +111,7 @@ public class LoginActivity extends BaseActivity {
                     String staffId = response.body().getStaffId();
                     String staffName = response.body().getName();
                     String userType = response.body().getUserType();
+                    String Token = response.body().getUserToken();
 
 
                     String shopName = response.body().getShopName();
@@ -121,14 +122,15 @@ public class LoginActivity extends BaseActivity {
                     String currencySymbol = response.body().getCurrencySymbol();
                     String shopStatus = response.body().getShopStatus();
 
-                    if (shopName != null || shopAddress != null || shopContact != null || shopEmail != null || tax != null || currencySymbol != null || shopStatus != null || staffId != null || staffName != null || userType != null) {
+//                    if (shopName != null || shopAddress != null || shopContact != null || shopEmail != null || tax != null || currencySymbol != null || shopStatus != null || staffId != null || staffName != null || userType != null || token != null)
+                    if (Token != null) {
 
 
                         if (shopStatus.equals(Constant.STATUS_CLOSED)) {
                             Toasty.error(LoginActivity.this, R.string.shop_closed_now, Toast.LENGTH_SHORT).show();
 
                             loading.dismiss();
-                        } else if (value.equals(Constant.SUCCESS)) {
+                        } else if (response.code() == 200) {
                             loading.dismiss();
                             //Creating editor to store values to shared preferences
                             SharedPreferences.Editor editor = sp.edit();
@@ -142,6 +144,8 @@ public class LoginActivity extends BaseActivity {
                             editor.putString(Constant.SP_STAFF_NAME, staffName);
                             editor.putString(Constant.SP_USER_TYPE, userType);
 
+                            editor.putString(Constant.TOKEN, Token);
+
 
                             editor.putString(Constant.SP_SHOP_NAME, shopName);
                             editor.putString(Constant.SP_SHOP_ADDRESS, shopAddress);
@@ -154,6 +158,8 @@ public class LoginActivity extends BaseActivity {
 
                             //Saving values to Share preference
                             editor.apply();
+
+                            String token_baru = sp.getString(Constant.TOKEN, "");
 
                             Toasty.success(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
@@ -179,4 +185,5 @@ public class LoginActivity extends BaseActivity {
             }
         });
     }
+
 }

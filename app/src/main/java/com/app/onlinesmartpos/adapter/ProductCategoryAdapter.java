@@ -115,7 +115,7 @@ public class ProductCategoryAdapter extends RecyclerView.Adapter<ProductCategory
 
     public void getProductsData(String categoryId) {
 
-        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this.context.getApplicationContext()).create(ApiInterface.class);
         Call<List<Product>> call;
         call = apiInterface.searchProductByCategory(categoryId);
 
