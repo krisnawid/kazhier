@@ -124,7 +124,7 @@
             android:layout_marginEnd="32dp"
             android:layout_marginTop="218dp"
             android:fontFamily="@font/poppins_regular"
-            android:text="@string/lupa_passwo"
+            android:text="Lupa Password"
             android:textAppearance="@style/lupa_passwo"
             android:gravity="top|end"
 
@@ -142,7 +142,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             app:backgroundTint="@color/yellowKakapos"
-            android:text="@string/masuk"
+            android:text="masuk"
             android:textAppearance="@style/masuk"
             android:fontFamily="@font/poppins_semibold" />
 
@@ -156,7 +156,7 @@
             android:layout_marginTop="313dp"
             android:fontFamily="@font/poppins_regular"
             android:gravity="top|end"
-            android:text="@string/belum_punya"
+            android:text="belum punya akun? "
             android:textAppearance="@style/belum_punya" />
 
         <TextView
@@ -171,7 +171,7 @@
             android:layout_marginStart="5dp"
             android:fontFamily="@font/poppins_regular"
             android:gravity="top|start"
-            android:text="@string/buat_akun_b"
+            android:text="buat akun"
             android:textAppearance="@style/lupa_passwo" />
 
     </RelativeLayout>
