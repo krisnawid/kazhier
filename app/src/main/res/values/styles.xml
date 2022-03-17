@@ -1,18 +1,212 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowContentOverlay">@null</item>
-    </style>
 
     <style name="RippleStyleWhite">
         <item name="mrl_rippleOverlay">true</item>
         <item name="mrl_rippleColor">#80FFFFFF</item>
         <item name="mrl_rippleHover">true</item>
         <item name="mrl_rippleAlpha">0.2</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.RoundedCornerMaterialButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:background">@drawable/rectangle_yellow_btn</item>
+    </style>
+
+    <style name="login">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="title_heading1">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#333333</item>
+    </style>
+
+    <style name="title_heading2">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#828282</item>
+    </style>
+
+    <style name="masuk">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="daftar_akun">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="saya_setuju">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#828282</item>
+    </style>
+
+    <style name="kakapos">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#414FB7</item>
+    </style>
+
+    <style name="headline">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#222222</item>
+    </style>
+
+    <style name="silahkan_isi">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#828282</item>
+    </style>
+
+    <style name="nama_katego">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#45494A</item>
+    </style>
+
+    <style name="contoh_maka">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#828282</item>
+    </style>
+
+    <style name="silahkan_is">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#828282</item>
+    </style>
+
+    <style name="kategori">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#45494A</item>
+    </style>
+
+    <style name="nama_produk">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#45494A</item>
+    </style>
+
+    <style name="deskripsi_p">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#45494A</item>
+    </style>
+
+    <style name="pilih_gamba">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#45494A</item>
+    </style>
+
+    <style name="unggah">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="makanan_rin">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="kategori_in">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#828282</item>
+    </style>
+
+    <style name="aplikasi_po">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#828282</item>
+    </style>
+
+    <style name="gratis_untu">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#828282</item>
+    </style>
+
+    <style name="belum_punya">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="stok_produk">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#45494A</item>
+    </style>
+
+    <style name="letak_rak">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#45494A</item>
+    </style>
+
+    <style name="harga_jual_">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#45494A</item>
+    </style>
+
+    <style name="harga_beli_">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#45494A</item>
+    </style>
+
+    <style name="pakai_stok">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#828282</item>
+    </style>
+
+    <style name="berat">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#45494A</item>
+    </style>
+
+    <style name="diskon_satu">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#45494A</item>
+    </style>
+
+    <style name="lupa_passwo">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#414FB7</item>
+    </style>
+
+    <style name="sudah_punya">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="nasi_goreng">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="nasi_di_gor">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">#828282</item>
+    </style>
+
+    <style name="rp_20_000">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="rangkuman_p">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#4F4F4F</item>
+    </style>
+
+    <style name="metode_pemb">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#4F4F4F</item>
+    </style>
+
+    <style name="total">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#BFBFBF</item>
+    </style>
+
+    <style name="rp_60_000">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#45494A</item>
     </style>
 </resources>
