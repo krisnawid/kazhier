@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#414FB7">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -20,22 +21,9 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                app:srcCompat="@drawable/onlinesoft_logo" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/sailec_regular"
-                android:gravity="center"
-                android:maxLines="2"
-                android:padding="5dp"
-                android:text="ONLINE POS"
-                android:textAllCaps="true"
-                android:textColor="@color/colorPrimary"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_pos_logo" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -43,8 +31,8 @@
                 android:fontFamily="@font/sailec_regular"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="ONLINE POS is a Smart Solution for your any shop. Manage your daily sales smartly by using Online POS"
-                android:textColor="@color/transparent_black" />
+                android:text="Kazhier adalah aplikasi pos dengan layanan lengkap dan mudah bagi pemilik usaha dalam memonitoring perkembangan usaha"
+                android:textColor="@color/white" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -53,17 +41,8 @@
                 android:autoLink="web"
                 android:fontFamily="@font/sailec_regular"
                 android:gravity="center"
-                android:text="www.onlinesoftsell.com" />
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:autoLink="email"
-                android:fontFamily="@font/sailec_regular"
-                android:gravity="center"
-                android:text="onlinesoftsell@gmail.com" />
+                android:text="www.kazhier.com"
+                android:textColor="@color/white"/>
 
 
         </LinearLayout>
