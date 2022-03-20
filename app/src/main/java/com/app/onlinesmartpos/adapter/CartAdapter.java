@@ -80,10 +80,11 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
         String productName = cartProduct.get(position).get("product_name");
         final String price = cartProduct.get(position).get("product_price");
         final String productWeightUnit = cartProduct.get(position).get("product_weight_unit");
-        final String weight = cartProduct.get(position).get("product_weight");
+//        final String weight = cartProduct.get(position).get("product_weight");
         final String qty = cartProduct.get(position).get("product_qty");
         final String productImage = cartProduct.get(position).get("product_image");
         final String productStock = cartProduct.get(position).get("product_stock");
+        final String tax = cartProduct.get(position).get("product_tax_rate");
 
         String imageUrl= Constant.PRODUCT_IMAGE_URL+productImage;
 
@@ -123,7 +124,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
 
         holder.txtItemName.setText(productName);
         holder.txtPrice.setText(currency+ f.format(getPrice));
-        holder.txtWeight.setText(weight+" "+productWeightUnit);
+        holder.txtWeight.setText(productWeightUnit);
         holder.txtQtyNumber.setText(qty);
 
         holder.imgDelete.setOnClickListener(new View.OnClickListener() {

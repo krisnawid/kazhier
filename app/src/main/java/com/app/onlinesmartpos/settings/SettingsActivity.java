@@ -23,9 +23,9 @@ public class SettingsActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        getSupportActionBar().setHomeButtonEnabled(true); //for back button
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
-        getSupportActionBar().setTitle(R.string.action_settings);
+//        getSupportActionBar().setHomeButtonEnabled(true); //for back button
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
+//        getSupportActionBar().setTitle(R.string.action_settings);
 
 
         cardShopInfo = findViewById(R.id.card_shop_info);

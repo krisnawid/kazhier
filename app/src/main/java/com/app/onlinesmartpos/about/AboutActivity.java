@@ -14,9 +14,9 @@ public class AboutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
-        getSupportActionBar().setHomeButtonEnabled(true); //for back button
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
-        getSupportActionBar().setTitle(R.string.about_us);
+//        getSupportActionBar().setHomeButtonEnabled(true); //for back button
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
+//        getSupportActionBar().setTitle(R.string.about_us);
     }
 
     //for back button

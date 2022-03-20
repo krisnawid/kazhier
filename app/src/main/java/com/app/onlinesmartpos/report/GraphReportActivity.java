@@ -59,9 +59,9 @@ public class GraphReportActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graph_report);
 
-        getSupportActionBar().setHomeButtonEnabled(true); //for back button
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
-        getSupportActionBar().setTitle(R.string.monthly_sales_graph);
+//        getSupportActionBar().setHomeButtonEnabled(true); //for back button
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
+//        getSupportActionBar().setTitle(R.string.monthly_sales_graph);
 
         sp = getSharedPreferences(Constant.SHARED_PREF_NAME, Context.MODE_PRIVATE);
         currency = sp.getString(Constant.SP_CURRENCY_SYMBOL, "N/A");

@@ -90,6 +90,7 @@ public class Constant {
     public static final String PRODUCT_DESCRIPTION="product_description";
     public static final String PRODUCT_WEIGHT_UNIT_ID="product_weight_unit_id";
     public static final String PRODUCT_WEIGHT_UNIT="product_weight_unit";
+    public static final String PRODUCT_UNIT="product_unit";
     public static final String UNIT_NAME="unit_name";
     public static final String UNIT_ID="unit_id";
     public static final String PRODUCT_WEIGHT="product_weight";
@@ -101,6 +102,7 @@ public class Constant {
     public static final String PRODUCT_SELL_PRICE="product_sell_price";
     public static final String PRODUCT_IMAGE="product_image";
     public static final String PRODUCT_ORDER_DATE="product_order_date";
+    public static final String PRODUCT_TAX_RATE="product_tax_rate";
 
     public static final String CART_ID="cart_id";
 

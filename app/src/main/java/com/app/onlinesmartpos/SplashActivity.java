@@ -21,7 +21,7 @@ public class SplashActivity extends AppCompatActivity {
 
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
+//        actionBar.hide();
 
         new Handler().postDelayed(() -> {
             Intent intent = new Intent(SplashActivity.this, LoginActivity.class);

@@ -59,9 +59,9 @@ public class ExpenseGraphActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expense_graph);
 
-        getSupportActionBar().setHomeButtonEnabled(true); //for back button
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
-        getSupportActionBar().setTitle(R.string.monthly_expense_in_graph);
+//        getSupportActionBar().setHomeButtonEnabled(true); //for back button
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
+//        getSupportActionBar().setTitle(R.string.monthly_expense_in_graph);
         mShimmerViewContainer = findViewById(R.id.shimmer_view_container);
         layoutYear=findViewById(R.id.layout_year);
 

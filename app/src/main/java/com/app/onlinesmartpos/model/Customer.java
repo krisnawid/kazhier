@@ -8,6 +8,10 @@ public class Customer {
     @SerializedName("customer_id")
     private String customerId;
 
+    @SerializedName("id")
+    private String id;
+
+
     @SerializedName("customer_name")
     private String customerName;
     @SerializedName("customer_email")
@@ -27,6 +31,11 @@ public class Customer {
     public String getCustomerId() {
         return customerId;
     }
+
+    public String getId() {
+        return id;
+    }
+
 
     public String getCustomerName() {
         return customerName;

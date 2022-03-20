@@ -31,16 +31,16 @@ public class EditCustomersActivity extends BaseActivity {
     ProgressDialog loading;
     EditText etxtCustomerName, etxtAddress, etxtCustomerCell, etxtCustomerEmail;
     TextView txtEditCustomer, txtUpdateInformation;
-    String getCustomerId, getCustomerName, getCustomerCell, getCustomerEmail, getCustomerAddress;
+    String getCustomerId, getCustomerName, getCustomerCell, getCustomerEmail, getCustomerAddress, getId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_customers);
 
-        getSupportActionBar().setHomeButtonEnabled(true); //for back button
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
-        getSupportActionBar().setTitle(R.string.edit_customer);
+//        getSupportActionBar().setHomeButtonEnabled(true); //for back button
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
+//        getSupportActionBar().setTitle(R.string.edit_customer);
 
 
         etxtCustomerName = findViewById(R.id.etxt_customer_name);
@@ -52,6 +52,7 @@ public class EditCustomersActivity extends BaseActivity {
         txtUpdateInformation = findViewById(R.id.txt_update_customer);
 
         getCustomerId = getIntent().getExtras().getString("customer_id");
+        getId = getIntent().getExtras().getString("id");
         getCustomerName = getIntent().getExtras().getString("customer_name");
         getCustomerCell = getIntent().getExtras().getString("customer_cell");
         getCustomerEmail = getIntent().getExtras().getString("customer_email");
@@ -118,7 +119,7 @@ public class EditCustomersActivity extends BaseActivity {
                 } else {
 
 
-                    updateCustomer(getCustomerId, customerName, customerCell, customerEmail, customerAddress);
+                    updateCustomer(getId, customerName, customerCell, customerEmail, customerAddress);
 
 
                 }
@@ -147,9 +148,9 @@ public class EditCustomersActivity extends BaseActivity {
 
 
                 if (response.isSuccessful() && response.body() != null) {
-                    String value = response.body().getValue();
+                    String value = response.body().getMassage();
 
-                    if (value.equals(Constant.KEY_SUCCESS)) {
+                    if (response.code() == 200) {
 
                         loading.dismiss();
 
@@ -159,7 +160,7 @@ public class EditCustomersActivity extends BaseActivity {
                         startActivity(intent);
 
                     }
-                    else if (value.equals(Constant.KEY_FAILURE)) {
+                    else if (response.code() >= 400 && response.code() <= 500) {
 
                         loading.dismiss();
 

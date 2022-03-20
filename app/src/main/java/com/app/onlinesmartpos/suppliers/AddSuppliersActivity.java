@@ -36,9 +36,9 @@ public class AddSuppliersActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_suppliers);
 
-        getSupportActionBar().setHomeButtonEnabled(true); //for back button
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
-        getSupportActionBar().setTitle(R.string.add_suppliers);
+//        getSupportActionBar().setHomeButtonEnabled(true); //for back button
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
+//        getSupportActionBar().setTitle(R.string.add_suppliers);
 
         etxtSuppliersName = findViewById(R.id.etxt_supplier_name);
         etxtSuppliersContactPerson = findViewById(R.id.etxt_supplier_contact_name);

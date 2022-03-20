@@ -39,8 +39,13 @@ public class Product {
     private String productWeight;
 
 
-    @SerializedName("weight_unit_name")
+//    @SerializedName("weight_unit_name")
+//    private String productWeightUnit;
+    @SerializedName("product_weight_unit")
     private String productWeightUnit;
+
+    @SerializedName("product_tax_rate")
+    private String productTaxRate;
 
 
     @SerializedName("weight_unit_id")
@@ -129,6 +134,10 @@ public class Product {
 
     public String getValue() {
         return value;
+    }
+
+    public String getProductTaxRate() {
+        return productTaxRate;
     }
 
 

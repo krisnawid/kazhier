@@ -48,6 +48,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
+import com.app.onlinesmartpos.model.APIRespond;
+
 import es.dmoral.toasty.Toasty;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
@@ -77,9 +79,9 @@ public class ProductCart extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_cart);
 
-        getSupportActionBar().setHomeButtonEnabled(true); //for back button
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
-        getSupportActionBar().setTitle(R.string.product_cart);
+//        getSupportActionBar().setHomeButtonEnabled(true); //for back button
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
+//        getSupportActionBar().setTitle(R.string.product_cart);
 
         sp = getSharedPreferences(Constant.SHARED_PREF_NAME, Context.MODE_PRIVATE);
 
@@ -170,7 +172,7 @@ public class ProductCart extends BaseActivity {
                 String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).format(new Date());
                 String currentYear = new SimpleDateFormat("yyyy", Locale.ENGLISH).format(new Date());
                 //H denote 24 hours and h denote 12 hour hour format
-                String currentTime = new SimpleDateFormat("hh:mm a", Locale.ENGLISH).format(new Date()); //HH:mm:ss a
+                String currentTime = new SimpleDateFormat("HH:mm", Locale.ENGLISH).format(new Date()); //HH:mm:ss a
 
                 //timestamp use for invoice id for unique
                 Long tsLong = System.currentTimeMillis() / 1000;
@@ -187,7 +189,7 @@ public class ProductCart extends BaseActivity {
                     obj.put("order_date", currentDate);
                     obj.put("order_time", currentTime);
                     obj.put("order_type", type);
-                    obj.put("order_payment_method", paymentMethod);
+                    obj.put("payment_method", paymentMethod);
                     obj.put("customer_name", customerName);
 
                     obj.put("order_price", String.valueOf(orderPrice));
@@ -221,11 +223,13 @@ public class ProductCart extends BaseActivity {
                         objp.put("product_qty", lines.get(i).get("product_qty"));
                         objp.put("product_price", lines.get(i).get("product_price"));
                         objp.put("product_order_date", currentDate);
+                        objp.put("product_tax_rate", 0);
+//                        objp.put("category_id", 0);
 
                         array.put(objp);
 
                     }
-                    obj.put("lines", array);
+                    obj.put("products", array);
 
 
                 } catch (JSONException e) {
@@ -272,13 +276,13 @@ public class ProductCart extends BaseActivity {
         RequestBody body2 = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), String.valueOf(obj));
 
 
-        Call<String> call = apiInterface.submitOrders(body2);
+        Call<Customer> call = apiInterface.submitOrders(body2);
 
-        call.enqueue(new Callback<String>() {
+        call.enqueue(new Callback<Customer>() {
             @Override
-            public void onResponse(@NonNull Call<String> call, @NonNull Response<String> response) {
+            public void onResponse(@NonNull Call<Customer> call, @NonNull Response<Customer> response) {
 
-                if (response.isSuccessful()) {
+                if (response.code() == 200) {
 
                     progressDialog.dismiss();
                     Toasty.success(ProductCart.this, R.string.order_successfully_done, Toast.LENGTH_SHORT).show();
@@ -300,7 +304,7 @@ public class ProductCart extends BaseActivity {
             }
 
             @Override
-            public void onFailure(@NonNull Call<String> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<Customer> call, @NonNull Throwable t) {
 
                 Log.d("onFailure", t.toString());
 
@@ -360,7 +364,8 @@ public class ProductCart extends BaseActivity {
         String shopCurrency = currency;
         String tax = shopTax;
 
-        double getTax = Double.parseDouble(tax);
+//        double getTax = Double.parseDouble(tax);
+        double getTax = 0;
 
         AlertDialog.Builder dialog = new AlertDialog.Builder(ProductCart.this);
         View dialogView = getLayoutInflater().inflate(R.layout.dialog_payment, null);

@@ -39,7 +39,7 @@ public class LoginActivity extends BaseActivity {
         setContentView(R.layout.activity_login);
 
 
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
 
         etxtEmail = findViewById(R.id.etxt_email);
         etxtPassword = findViewById(R.id.etxt_password);

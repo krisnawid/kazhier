@@ -20,9 +20,9 @@ public class ReportActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
 
-        getSupportActionBar().setHomeButtonEnabled(true); //for back button
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
-        getSupportActionBar().setTitle(R.string.report);
+//        getSupportActionBar().setHomeButtonEnabled(true); //for back button
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
+//        getSupportActionBar().setTitle(R.string.report);
 
 
 

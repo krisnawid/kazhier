@@ -51,9 +51,9 @@ public class CustomersActivity extends BaseActivity {
         setContentView(R.layout.activity_customers);
 
 
-        getSupportActionBar().setHomeButtonEnabled(true); //for back button
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
-        getSupportActionBar().setTitle(R.string.all_customer);
+//        getSupportActionBar().setHomeButtonEnabled(true); //for back button
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
+//        getSupportActionBar().setTitle(R.string.all_customer);
 
         mShimmerViewContainer = findViewById(R.id.shimmer_view_container);
         mSwipeRefreshLayout =findViewById(R.id.swipeToRefresh);

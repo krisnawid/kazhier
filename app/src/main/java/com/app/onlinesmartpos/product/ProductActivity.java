@@ -53,9 +53,9 @@ public class ProductActivity extends BaseActivity {
 
         fabAdd = findViewById(R.id.fab_add);
         etxtSearch = findViewById(R.id.etxt_search);
-        getSupportActionBar().setHomeButtonEnabled(true); //for back button
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
-        getSupportActionBar().setTitle(R.string.products);
+//        getSupportActionBar().setHomeButtonEnabled(true); //for back button
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
+//        getSupportActionBar().setTitle(R.string.products);
 
         mShimmerViewContainer = findViewById(R.id.shimmer_view_container);
         mSwipeRefreshLayout =findViewById(R.id.swipeToRefresh);

@@ -59,10 +59,10 @@ public class PosActivity extends BaseActivity {
         setContentView(R.layout.activity_pos);
 
 
-        getSupportActionBar().setHomeButtonEnabled(true); //for back button
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
-        getSupportActionBar().setTitle(R.string.all_product);
-        getSupportActionBar().hide();
+//        getSupportActionBar().setHomeButtonEnabled(true); //for back button
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
+//        getSupportActionBar().setTitle(R.string.all_product);
+//        getSupportActionBar().hide();
 
         etxtSearch = findViewById(R.id.etxt_search);
         recyclerView = findViewById(R.id.recycler);

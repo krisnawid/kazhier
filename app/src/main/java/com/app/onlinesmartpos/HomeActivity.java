@@ -60,9 +60,9 @@ public class HomeActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        getSupportActionBar().setTitle(R.string.app_name);
-        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_gradient));
-        getSupportActionBar().setElevation(0);
+//        getSupportActionBar().setTitle(R.string.app_name);
+//        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_gradient));
+//        getSupportActionBar().setElevation(0);
 
 
         cardCustomers = findViewById(R.id.card_customers);

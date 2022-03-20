@@ -2,6 +2,7 @@ package com.app.onlinesmartpos.networking;
 
 
 import com.app.onlinesmartpos.Constant;
+import com.app.onlinesmartpos.model.APIRespond;
 import com.app.onlinesmartpos.model.Category;
 import com.app.onlinesmartpos.model.Customer;
 import com.app.onlinesmartpos.model.Expense;
@@ -47,7 +48,7 @@ public interface ApiInterface {
 
     //calling json array , need list
     @POST("order/create")
-    Call<String> submitOrders(
+    Call<Customer> submitOrders(
             @Body RequestBody ordersData
     );
 
@@ -103,7 +104,7 @@ public interface ApiInterface {
 
 
     //get order data
-    @GET("shop_information.php")
+    @GET("company")
     Call<List<ShopInformation>> shopInformation(
             @Query(Constant.SHOP_ID) String shopId
 
@@ -228,10 +229,11 @@ public interface ApiInterface {
 
     //update customer data to server
     @FormUrlEncoded
-    @PUT("customer/{customer_id}/edit")
+    @PUT("customer/{id}/edit")
     Call<Customer> updateCustomers(
             //@Field(Constant.CUSTOMER_ID) String id,
-            @Path(value = Constant.CUSTOMER_ID) String id,
+            @Path("id") String Id,
+//            @Path(value = Constant.CUSTOMER_ID) String id,
             @Field(Constant.CUSTOMER_NAME) String name,
             @Field(Constant.CUSTOMER_CELL) String cell,
             @Field(Constant.CUSTOMER_EMAIL) String email,
@@ -258,10 +260,10 @@ public interface ApiInterface {
 
     //delete customer
 //    @FormUrlEncoded
-    @DELETE("customer/{customer_id}/delete")
+    @DELETE("customer/{id}/delete")
     Call<Customer> deleteCustomer(
             //@Field(Constant.CUSTOMER_ID) String customerId
-            @Path(Constant.CUSTOMER_ID) String customerId
+            @Path("id") String Id
     );
 
 
@@ -389,7 +391,7 @@ public interface ApiInterface {
 
 
     //get expense data
-    @GET("get_expense.php")
+    @GET("expense")
     Call<List<Expense>> getExpense(
             @Query(Constant.SEARCH_TEXT) String searchText
 

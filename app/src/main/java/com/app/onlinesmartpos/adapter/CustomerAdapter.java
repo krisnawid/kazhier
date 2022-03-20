@@ -59,6 +59,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.MyView
     public void onBindViewHolder(@NonNull final CustomerAdapter.MyViewHolder holder, int position) {
 
         final String customer_id = customerData.get(position).getCustomerId();
+        final String id = customerData.get(position).getId();
         String name = customerData.get(position).getCustomerName();
         String cell = customerData.get(position).getCustomerCell();
         String email = customerData.get(position).getCustomerEmail();
@@ -99,7 +100,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.MyView
 
 
                                 if (utils.isNetworkAvailable(context)) {
-                                    deleteCustomer(customer_id);
+                                    deleteCustomer(id);
                                     customerData.remove(holder.getAdapterPosition());
                                     dialogBuilder.dismiss();
                                 }
@@ -155,6 +156,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.MyView
         public void onClick(View v) {
             Intent i = new Intent(context, EditCustomersActivity.class);
             i.putExtra("customer_id", customerData.get(getAdapterPosition()).getCustomerId());
+            i.putExtra("id", customerData.get(getAdapterPosition()).getId());
             i.putExtra("customer_name", customerData.get(getAdapterPosition()).getCustomerName());
             i.putExtra("customer_cell", customerData.get(getAdapterPosition()).getCustomerCell());
             i.putExtra("customer_email", customerData.get(getAdapterPosition()).getCustomerEmail());
@@ -177,9 +179,9 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.MyView
 
                 if (response.isSuccessful() && response.body() != null) {
 
-                    String value = response.body().getValue();
+                    String value = response.body().getMassage();
 
-                    if (value.equals(Constant.KEY_SUCCESS)) {
+                    if (value.equals("Data successfully deleted")) {
                         Toasty.error(context, R.string.customer_deleted, Toast.LENGTH_SHORT).show();
                         notifyDataSetChanged();
 

@@ -49,9 +49,9 @@ public class EditExpenseActivity extends BaseActivity {
         setContentView(R.layout.activity_edit_expense);
 
 
-        getSupportActionBar().setHomeButtonEnabled(true); //for back button
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
-        getSupportActionBar().setTitle(R.string.edit_expense);
+//        getSupportActionBar().setHomeButtonEnabled(true); //for back button
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
+//        getSupportActionBar().setTitle(R.string.edit_expense);
 
         etxtExpenseName = findViewById(R.id.etxt_expense_name);
         etxtExpenseNote = findViewById(R.id.etxt_expense_note);

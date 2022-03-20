@@ -30,9 +30,9 @@ public class ScannerActivity extends BaseActivity implements ZXingScannerView.Re
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanner);
-        getSupportActionBar().setHomeButtonEnabled(true); //for back button
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
-        getSupportActionBar().setTitle(R.string.qr_barcode_scanner);
+//        getSupportActionBar().setHomeButtonEnabled(true); //for back button
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
+//        getSupportActionBar().setTitle(R.string.qr_barcode_scanner);
 
         if (currentApiVersion >= Build.VERSION_CODES.M) {
             requestCameraPermission();

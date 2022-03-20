@@ -70,9 +70,9 @@ public class AddProductActivity extends BaseActivity {
         setContentView(R.layout.activity_add_product);
 
 
-        getSupportActionBar().setHomeButtonEnabled(true); //for back button
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
-        getSupportActionBar().setTitle(R.string.add_product);
+//        getSupportActionBar().setHomeButtonEnabled(true); //for back button
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
+//        getSupportActionBar().setTitle(R.string.add_product);
 
         etxtProductName = findViewById(R.id.etxt_product_name);
         etxtProductCode = findViewById(R.id.etxt_product_code);

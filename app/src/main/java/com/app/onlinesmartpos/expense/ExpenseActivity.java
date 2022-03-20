@@ -53,9 +53,9 @@ public class ExpenseActivity extends BaseActivity {
 
         fabAdd = findViewById(R.id.fab_add);
         etxtSearch = findViewById(R.id.etxt_search);
-        getSupportActionBar().setHomeButtonEnabled(true); //for back button
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
-        getSupportActionBar().setTitle(R.string.all_expense);
+//        getSupportActionBar().setHomeButtonEnabled(true); //for back button
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//for back button
+//        getSupportActionBar().setTitle(R.string.all_expense);
 
         recyclerView = findViewById(R.id.product_recyclerview);
         imgNoProduct = findViewById(R.id.image_no_product);
